@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./src/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./src/styles/style.css">
+  <script src="./main.js" defer></script>
+  <title>Frontend Mentor | Interactive rating component</title>
+</head>
+<body>
+  <div class="bg-veryDarkBlue font-overpass h-screen flex flex-col items-center justify-center">
+    <div id="rating" class="bg-darkBlue w-7/8 md:w-4/9 lg:w-2/6 xl:w-3/10 rounded-4xl px-[2.5em] py-[3em] lg:px-[3.5em] lg:py-[4em] flex flex-col justify-center items-start gap-[2.4em]">
+      <img class="bg-darkMidBlue rounded-[50%] p-5" src="./src/images/icon-star.svg" alt="">
+      <h1 role="heading" class="text-[2.5rem] lg:text-[2.8rem] font-semibold text-white">How did we do?</h1>
+      <p class="text-lightGrey text-[1.4rem] lg:text-[1.5rem] mt-[-1.2em]">Please let us know how we did with your support request. All feedback is appreciated 
+        to help us improve our offering!
+      </p>
+      <div class="flex flex-row justify-between align-center w-full text-lightGrey text-[1.5rem] text-center font-bold">
+        <div class="numberStyle hover:bg-primary hover:text-white" role="button" tab-index='0' aria-label="Rate 1 out of 5">1</div>
+        <div class="numberStyle hover:bg-primary hover:text-white" role="button" tab-index='0' aria-label="Rate 2 out of 5">2</div>
+        <div class="numberStyle hover:bg-primary hover:text-white" role="button" tab-index='0' aria-label="Rate 3 out of 5">3</div>
+        <div class="numberStyle hover:bg-primary hover:text-white" role="button" tab-index='0' aria-label="Rate 4 out of 5">4</div>
+        <div class="numberStyle hover:bg-primary hover:text-white" role="button" tab-index='0' aria-label="Rate 5 out of 5">5</div>
+      </div>
+      <button id="submit" aria-label="Submit your rating" class="bg-primary tracking-[.18em] w-full rounded-[1.5em] h-[3em] cursor-pointer text-[1.4rem] font-bold uppercase text-veryDarkBlue hover:text-veryDarkBlue hover:bg-white transition duration-300" type="submit">Submit</button>
+    </div>
+
+    <div id="thanks" class="hidden bg-darkBlue w-7/8 md:w-4/9 lg:w-2/6 xl:w-3/10 rounded-4xl px-[2.5em] py-[3em] lg:px-[3.5em] lg:py-[4em] flex flex-col justify-center items-center gap-[2em]">
+      <img class="mb-[.5em]" src="./src/images/illustration-thank-you.svg" alt="Thank you illustration">
+      <p id="user-rating" class="bg-darkMidBlue text-[1.4rem]  lg:text-[1.5rem] font-normal text-primary rounded-[2em] py-[.5em] px-[1em]"></p>
+      <h2 class="text-[2.5rem] lg:text-[2.8rem] font-semibold text-white mt-[.4em]">Thank you!</h2>
+      <p class="text-lightGrey text-[1.4rem]  lg:text-[1.5rem] text-center mt-[-1em]">We appreciate you taking the time to give a rating. If you ever need more support, 
+        don't hesitate to get in touch!
+      </p>
+    </div>
+
+    <footer class="text-[1.2rem] text-lightGrey absolute bottom-[1em]">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" class="text-primary" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#" class="text-primary">Mirna &ndrisic</a>.
+    </footer>
+  </div>
+</body>
+</html>

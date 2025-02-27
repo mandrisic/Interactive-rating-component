@@ -1,4 +1,5 @@
 /*! tailwindcss v4.0.9 | MIT License | https://tailwindcss.com */
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -7,10 +8,12 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-500: oklch(0.637 0.237 25.331);
+    --color-white: hsl(0, 0%, 100%);
     --spacing: 0.25rem;
-    --text-3xl: 1.875rem;
-    --text-3xl--line-height: calc(2.25 / 1.875);
+    --font-weight-normal: 400;
+    --font-weight-semibold: 600;
     --font-weight-bold: 700;
+    --radius-4xl: 2rem;
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
@@ -28,6 +31,12 @@
     --default-mono-font-variation-settings: var(
       --font-mono--font-variation-settings
     );
+    --color-primary: hsl(25, 97%, 53%);
+    --color-lightGrey: hsl(217, 12%, 63%);
+    --color-darkBlue: hsl(213, 19%, 18%);
+    --color-darkMidBlue: hsl(212, 12.60%, 23.30%);
+    --color-veryDarkBlue: hsl(216, 12%, 8%);
+    --font-overpass: 'Overpass', sans-serif;
   }
 }
 @layer base {
@@ -235,6 +244,9 @@
   .end-2 {
     inset-inline-end: calc(var(--spacing) * 2);
   }
+  .bottom-\[1em\] {
+    bottom: 1em;
+  }
   .isolate {
     isolation: isolate;
   }
@@ -346,6 +358,18 @@
       max-width: 96rem !important;
     }
   }
+  .mt-\[-1\.2em\] {
+    margin-top: -1.2em;
+  }
+  .mt-\[-1em\] {
+    margin-top: -1em;
+  }
+  .mt-\[\.4em\] {
+    margin-top: .4em;
+  }
+  .mb-\[\.5em\] {
+    margin-bottom: .5em;
+  }
   .box-border {
     box-sizing: border-box;
   }
@@ -433,6 +457,9 @@
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
+  .h-\[3em\] {
+    height: 3em;
+  }
   .h-screen {
     height: 100vh;
   }
@@ -445,8 +472,20 @@
   .min-h-screen {
     min-height: 100vh;
   }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
+  }
   .w-1\/2 {
     width: calc(1/2 * 100%);
+  }
+  .w-7 {
+    width: calc(var(--spacing) * 7);
+  }
+  .w-7\/8 {
+    width: calc(7/8 * 100%);
+  }
+  .w-full {
+    width: 100%;
   }
   .w-screen {
     width: 100vw;
@@ -571,6 +610,9 @@
   }
   .animate-none {
     animation: none;
+  }
+  .cursor-pointer {
+    cursor: pointer;
   }
   .touch-pinch-zoom {
     --tw-pinch-zoom: pinch-zoom;
@@ -837,6 +879,12 @@
   .justify-items-stretch {
     justify-items: stretch;
   }
+  .gap-\[2\.4em\] {
+    gap: 2.4em;
+  }
+  .gap-\[2em\] {
+    gap: 2em;
+  }
   .space-y-reverse {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 1;
@@ -930,6 +978,18 @@
   }
   .rounded {
     border-radius: 0.25rem;
+  }
+  .rounded-4xl {
+    border-radius: var(--radius-4xl);
+  }
+  .rounded-\[1\.5em\] {
+    border-radius: 1.5em;
+  }
+  .rounded-\[2em\] {
+    border-radius: 2em;
+  }
+  .rounded-\[50\%\] {
+    border-radius: 50%;
   }
   .rounded-s {
     border-start-start-radius: 0.25rem;
@@ -1054,6 +1114,15 @@
   .bg-\[var\(--my_variable\)\] {
     background-color: var(--my_variable);
   }
+  .bg-darkBlue {
+    background-color: var(--color-darkBlue);
+  }
+  .bg-darkMidBlue {
+    background-color: var(--color-darkMidBlue);
+  }
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
   .bg-red-500 {
     background-color: var(--color-red-500);
   }
@@ -1062,6 +1131,9 @@
   }
   .bg-red-500\/\[50\%\] {
     background-color: color-mix(in oklab, var(--color-red-500) 50%, transparent);
+  }
+  .bg-veryDarkBlue {
+    background-color: var(--color-veryDarkBlue);
   }
   .-bg-conic {
     --tw-gradient-position: in oklab;
@@ -1229,6 +1301,21 @@
   .object-top {
     object-position: top;
   }
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
+  }
+  .px-\[1em\] {
+    padding-inline: 1em;
+  }
+  .px-\[2\.5em\] {
+    padding-inline: 2.5em;
+  }
+  .py-\[\.5em\] {
+    padding-block: .5em;
+  }
+  .py-\[3em\] {
+    padding-block: 3em;
+  }
   .text-center {
     text-align: center;
   }
@@ -1271,9 +1358,20 @@
   .align-top {
     vertical-align: top;
   }
-  .text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  .font-overpass {
+    font-family: var(--font-overpass);
+  }
+  .text-\[1\.2rem\] {
+    font-size: 1.2rem;
+  }
+  .text-\[1\.4rem\] {
+    font-size: 1.4rem;
+  }
+  .text-\[1\.5rem\] {
+    font-size: 1.5rem;
+  }
+  .text-\[2\.5rem\] {
+    font-size: 2.5rem;
   }
   .leading-none {
     --tw-leading: 1;
@@ -1282,6 +1380,18 @@
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
+  }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .tracking-\[\.18em\] {
+    --tw-tracking: .18em;
+    letter-spacing: .18em;
   }
   .text-balance {
     text-wrap: balance;
@@ -1355,6 +1465,18 @@
   }
   .\[color\:red\]\/50\! {
     color: color-mix(in oklab, red 50%, transparent) !important;
+  }
+  .text-lightGrey {
+    color: var(--color-lightGrey);
+  }
+  .text-primary {
+    color: var(--color-primary);
+  }
+  .text-veryDarkBlue {
+    color: var(--color-veryDarkBlue);
+  }
+  .text-white {
+    color: var(--color-white);
   }
   .capitalize {
     text-transform: capitalize;
@@ -1638,6 +1760,10 @@
   .transition-normal {
     transition-behavior: normal;
   }
+  .duration-300 {
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+  }
   .ease-in {
     --tw-ease: var(--ease-in);
     transition-timing-function: var(--ease-in);
@@ -1799,6 +1925,193 @@
   .transform-view {
     transform-box: view-box;
   }
+  .hover\:bg-primary {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+  .hover\:bg-white {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-white);
+      }
+    }
+  }
+  .hover\:text-veryDarkBlue {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-veryDarkBlue);
+      }
+    }
+  }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
+      }
+    }
+  }
+  .md\:w-4\/9 {
+    @media (width >= 48rem) {
+      width: calc(4/9 * 100%);
+    }
+  }
+  .lg\:w-2\/6 {
+    @media (width >= 64rem) {
+      width: calc(2/6 * 100%);
+    }
+  }
+  .lg\:gap-\[2\.4em\] {
+    @media (width >= 64rem) {
+      gap: 2.4em;
+    }
+  }
+  .lg\:px-\[3\.5em\] {
+    @media (width >= 64rem) {
+      padding-inline: 3.5em;
+    }
+  }
+  .lg\:px-\[3em\] {
+    @media (width >= 64rem) {
+      padding-inline: 3em;
+    }
+  }
+  .lg\:py-\[3\.5em\] {
+    @media (width >= 64rem) {
+      padding-block: 3.5em;
+    }
+  }
+  .lg\:py-\[4em\] {
+    @media (width >= 64rem) {
+      padding-block: 4em;
+    }
+  }
+  .lg\:text-\[1\.5rem\] {
+    @media (width >= 64rem) {
+      font-size: 1.5rem;
+    }
+  }
+  .lg\:text-\[2\.6rem\] {
+    @media (width >= 64rem) {
+      font-size: 2.6rem;
+    }
+  }
+  .lg\:text-\[2\.7rem\] {
+    @media (width >= 64rem) {
+      font-size: 2.7rem;
+    }
+  }
+  .lg\:text-\[2\.8rem\] {
+    @media (width >= 64rem) {
+      font-size: 2.8rem;
+    }
+  }
+  .xl\:w-1\/4 {
+    @media (width >= 80rem) {
+      width: calc(1/4 * 100%);
+    }
+  }
+  .xl\:w-1\/5 {
+    @media (width >= 80rem) {
+      width: calc(1/5 * 100%);
+    }
+  }
+  .xl\:w-1\/6 {
+    @media (width >= 80rem) {
+      width: calc(1/6 * 100%);
+    }
+  }
+  .xl\:w-2 {
+    @media (width >= 80rem) {
+      width: calc(var(--spacing) * 2);
+    }
+  }
+  .xl\:w-2\/1 {
+    @media (width >= 80rem) {
+      width: calc(2/1 * 100%);
+    }
+  }
+  .xl\:w-2\/5 {
+    @media (width >= 80rem) {
+      width: calc(2/5 * 100%);
+    }
+  }
+  .xl\:w-2\/8 {
+    @media (width >= 80rem) {
+      width: calc(2/8 * 100%);
+    }
+  }
+  .xl\:w-2\/9 {
+    @media (width >= 80rem) {
+      width: calc(2/9 * 100%);
+    }
+  }
+  .xl\:w-2\/10 {
+    @media (width >= 80rem) {
+      width: calc(2/10 * 100%);
+    }
+  }
+  .xl\:w-2\/12 {
+    @media (width >= 80rem) {
+      width: calc(2/12 * 100%);
+    }
+  }
+  .xl\:w-3 {
+    @media (width >= 80rem) {
+      width: calc(var(--spacing) * 3);
+    }
+  }
+  .xl\:w-3\/9 {
+    @media (width >= 80rem) {
+      width: calc(3/9 * 100%);
+    }
+  }
+  .xl\:w-3\/10 {
+    @media (width >= 80rem) {
+      width: calc(3/10 * 100%);
+    }
+  }
+  .xl\:w-4\/8 {
+    @media (width >= 80rem) {
+      width: calc(4/8 * 100%);
+    }
+  }
+  .xl\:w-4\/12 {
+    @media (width >= 80rem) {
+      width: calc(4/12 * 100%);
+    }
+  }
+}
+html {
+  font-size: 62.5%;
+  font-family: var(--font-overpass);
+}
+@layer components {
+  .numberStyle {
+    height: 2.8em;
+    width: 2.8em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: var(--color-darkMidBlue);
+    padding: 0.7em;
+    font-size: 1.5rem;
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+    @media (width >= 64rem) {
+      font-size: 1.6rem;
+    }
+  }
+  .selected {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+  }
 }
 @property --tw-translate-x {
   syntax: "*";
@@ -1902,6 +2215,10 @@
   inherits: false;
 }
 @property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
   syntax: "*";
   inherits: false;
 }
@@ -2061,6 +2378,10 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-ease {
   syntax: "*";
   inherits: false;
@@ -2078,10 +2399,6 @@
   inherits: false;
 }
 @property --tw-contain-style {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-duration {
   syntax: "*";
   inherits: false;
 }

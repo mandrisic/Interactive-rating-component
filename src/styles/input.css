@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --color-primary: hsl(25, 97%, 53%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-lightGrey: hsl(217, 12%, 63%);
+    --color-darkBlue: hsl(213, 19%, 18%);
+    --color-darkMidBlue: hsl(212, 12.60%, 23.30%);
+    --color-veryDarkBlue: hsl(216, 12%, 8%);
+
+    --font-overpass: 'Overpass', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: var(--font-overpass);
+}
+
+@layer components{
+    .numberStyle {
+        @apply bg-darkMidBlue rounded-[50%] w-[2.8em] h-[2.8em] p-[0.7em] text-[1.5rem] lg:text-[1.6rem]  cursor-pointer font-bold transition duration-300;
+    }
+
+    .selected {
+        @apply bg-white text-primary;
+    }
+}
